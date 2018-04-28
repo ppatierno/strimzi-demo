@@ -1,0 +1,3 @@
+[submodule "strimzi-lab"]
+	path = strimzi-lab
+	url = https://github.com/strimzi/strimzi-lab.git
