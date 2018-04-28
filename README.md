@@ -2,6 +2,6 @@ This repository contains all the bits for setting up the demo of the "Introducin
 
 # Strimzi (demo)
 
-
+Cluster deployment [here](cluster-deployment/README.md)
 
 

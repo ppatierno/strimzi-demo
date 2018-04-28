@@ -29,16 +29,16 @@ Deploy an ephemeral cluster.
 oc new-app strimzi-ephemeral
 ```
 
+Show the running pods.
+
+```
+watch oc get pods
+```
+
 Show the cluster config map.
 
 ```
 oc get cm my-cluster -o yaml
-```
-
-Show the running pods.
-
-```
-oc get pods
 ```
 
 ## Update Cluster
@@ -52,7 +52,7 @@ oc edit cm my-cluster
 Show the running pods.
 
 ```
-oc get pods
+watch oc get pods
 ```
 
 Update the broker config parameter `KAFKA_DEFAULT_REPLICATION_FACTOR` from 1 to 2.
