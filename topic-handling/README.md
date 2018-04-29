@@ -17,15 +17,15 @@ We can also describing it for getting more information.
 
 ```
 oc exec -it my-cluster-kafka-0 -- bin/kafka-topics.sh --zookeeper my-cluster-zookeeper:2181 --describe --topic created-as-configmap
-Topic:my-topic	PartitionCount:1	ReplicationFactor:1	Configs:
-	Topic: created-as-configmap	Partition: 0	Leader: 1	Replicas: 1	Isr: 1
+Topic:created-as-configmap      PartitionCount:1        ReplicationFactor:1     Configs:retention.ms=4600000,cleanup.policy=compact
+        Topic: created-as-configmap     Partition: 0    Leader: 4       Replicas: 4     Isr: 4
 ```
 
 Let's increase the partitions number now.
 It's possible just updating the related config map and changing the `partitions` data field from 1 to 3, for example using the "edit" command provided by the `oc` tool.
 
 ```
-oc edit cm my-topic
+oc edit cm created-as-configmap
 ```
 
 The Topic Controller detects this update and updates the related Kafka topic accordingly.
@@ -33,10 +33,10 @@ We can check that describing the topic one more time.
 
 ```
 oc exec -it my-cluster-kafka-0 -- bin/kafka-topics.sh --zookeeper my-cluster-zookeeper:2181 --describe --topic created-as-configmap
-Topic:created-as-configmap	PartitionCount:3	ReplicationFactor:1	Configs:
-	Topic: created-as-configmap	Partition: 0	Leader: 1	Replicas: 1	Isr: 1
-	Topic: created-as-configmap	Partition: 1	Leader: 2	Replicas: 2	Isr: 2
-	Topic: created-as-configmap	Partition: 2	Leader: 3	Replicas: 3	Isr: 3
+Topic:created-as-configmap      PartitionCount:3        ReplicationFactor:1     Configs:retention.ms=4600000,cleanup.policy=compact
+        Topic: created-as-configmap     Partition: 0    Leader: 4       Replicas: 4     Isr: 4
+        Topic: created-as-configmap     Partition: 1    Leader: 0       Replicas: 0     Isr: 0
+        Topic: created-as-configmap     Partition: 2    Leader: 1       Replicas: 1     Isr: 1
 ```
 
 ## Create topic through Kafka
