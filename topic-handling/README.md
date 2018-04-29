@@ -50,3 +50,11 @@ Show how a related ConfigMap is created by the Topic Controller.
 ```
 oc get configmap created-in-kafka -o yaml
 ```
+
+## Application
+
+Deploy two simple Kafka consumer and producer applications using a topic named `my-topic` for exchanging messages.
+
+```
+oc create -f topic-handling/example-app.yaml
+```
