@@ -6,5 +6,5 @@ Cluster deployment [here](cluster-deployment/README.md)
 
 Topic handling [here](topic-handling/README.md)
 
-IoT demo [here](strimzi-lab/iot-demo/README.md)
+IoT demo [here](https://github.com/strimzi/strimzi-lab/blob/master/iot-demo/README.md)
 
