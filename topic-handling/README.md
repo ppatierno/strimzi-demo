@@ -2,6 +2,14 @@
 
 ## Create topic through ConfigMap
 
+Show the topic config map.
+
+```
+cat topic-handling/topic.yaml
+```
+
+Create the topic through creating the related config map.
+
 ```
 oc create -f topic-handling/topic.yaml
 ```
