@@ -58,29 +58,3 @@ Show the running pods; two more Pods are started.
 ```
 watch oc get pods
 ```
-
-Update the broker config parameter `KAFKA_DEFAULT_REPLICATION_FACTOR` from 1 to 2.
-Before that let's check the broker log with the current value.
-
-```
-oc logs my-cluster-kafka-0 | grep default.replication.factor
-```
-
-Edit the `my-cluster` config map.
-
-```
-oc edit cm my-cluster
-```
-
-This kind of update is much more complex because changing the Kafka broker configuration we want all the running brokers being update so it means that each broker needs to be restarted in order to get the new configuration.
-In this case, detecting the config map update, the Cluster Controller starts a "rolling update" and each broker Pod is killed one by one and then restarted with the new configuration.
-
-```
-watch oc get pods
-```
-
-Check the broker log with the new value.
-
-```
-oc logs my-cluster-kafka-0 | grep default.replication.factor
-```
