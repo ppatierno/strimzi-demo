@@ -6,9 +6,9 @@ This repository contains all the bits for setting up the demo of the "Introducin
 
 # Strimzi (demo)
 
-Cluster deployment [here](cluster-deployment/README.md)
+* Cluster deployment [here](cluster-deployment/README.md) : it shows how to deploy a Kafka cluster using the Cluster Operator and how to update it;
 
-Topic handling [here](topic-handling/README.md)
+* Topic handling [here](topic-handling/README.md) : it shows how to use the Topic Operator in order to create topics and update them;
 
-IoT demo [here](https://github.com/strimzi/strimzi-lab/blob/master/iot-demo/README.md)
+* IoT demo [here](https://github.com/strimzi/strimzi-lab/blob/master/iot-demo/README.md)
 
